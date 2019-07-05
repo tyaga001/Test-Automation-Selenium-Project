@@ -1,7 +1,6 @@
 package configurations;
 
 import io.github.bonigarcia.wdm.DriverManagerType;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -11,15 +10,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
-public class webDriverManager {
+public class WebDriverManager {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(webDriverManager.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(WebDriverManager.class);
     private static final String BROWSER = "browser";
 
-    public webDriverManager() {
+    public WebDriverManager() {
 
         DriverManagerType type = getBrowser();
-        WebDriverManager.getInstance(type).setup();
+        io.github.bonigarcia.wdm.WebDriverManager.getInstance(type).setup();
     }
 
     private DriverManagerType getBrowser() {

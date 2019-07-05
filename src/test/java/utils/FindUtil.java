@@ -15,11 +15,11 @@ public class FindUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(FindUtil.class);
 
     @Autowired
-    private WebDriver driver;
+    private WebDriver webDriver;
 
     public WebElement findElement(By by) {
         try {
-            return driver.findElement(by);
+            return webDriver.findElement(by);
         } catch (NoSuchElementException e) {
             LOGGER.info("No such element on page" + String.valueOf(by));
             return null;
