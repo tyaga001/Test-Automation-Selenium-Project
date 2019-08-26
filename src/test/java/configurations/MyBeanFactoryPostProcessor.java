@@ -19,8 +19,6 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
             }
         }
     }
-
-
     public void setScope(String scope) {
         this.scope = scope;
     }
