@@ -26,8 +26,7 @@ public class FindUtil {
         }
     }
 
-    public boolean isElementDisplayed(By by) {
-        WebElement element = findElement(by);
-        return element != null && element.isDisplayed();
+    public boolean isElementDisplayed(WebElement webElement) {
+        return webElement != null && webElement.isDisplayed();
     }
 }
